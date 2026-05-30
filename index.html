@@ -28,6 +28,12 @@
       rel="icon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='48'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles.css" />
     <script type="application/ld+json">
       {
@@ -47,30 +53,25 @@
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a class="brand" href="#top">tinpro2k5.github.io</a>
-        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
-          <span aria-hidden="true">🌙</span>
-          Theme
-        </button>
-      </div>
-    </header>
-
-    <main id="main-content" class="container" aria-label="Portfolio sections">
-      <section id="top" class="hero card">
-        <div class="hero-content">
-          <p class="eyebrow">Cloud / DevOps / Backend / NLP</p>
-          <h1>Lê Trung Tín</h1>
-          <p class="role">Cloud/DevOps Engineer Intern Candidate</p>
-          <p class="muted">Ho Chi Minh City, Vietnam</p>
-          <p id="bio" class="summary">
-            Third-year Computer Science student with strong academic performance and hands-on project experience in cloud-ready backend systems and NLP applications.
-          </p>
-          <div class="cta-group">
-            <a class="btn btn-primary" href="./assets/le-trung-tin-cv.txt" download>Download CV</a>
-            <a class="btn btn-secondary" href="#projects">View Projects</a>
+    <main class="container">
+      <section class="card hero">
+        <div class="profile">
+          <img id="avatar" class="avatar" alt="GitHub avatar" />
+          <div>
+            <p class="tagline">Cloud / DevOps Engineer Intern</p>
+            <h1 id="full-name">Lê Trung Tín</h1>
+            <p id="bio">Đang tải thông tin GitHub...</p>
+            <p class="contact-line">
+              📞 <a href="tel:+84343996748">(+84)343996748</a> · ✉️
+              <a href="mailto:letrungtin12052005@gmail.com">letrungtin12052005@gmail.com</a>
+            </p>
+            <p class="contact-line">
+              🔗 <a id="github-link" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#project-section">View Projects</a>
+              <a class="button button-ghost" href="mailto:letrungtin12052005@gmail.com">Contact</a>
+            </div>
           </div>
           <ul class="contact-links" aria-label="Contact links">
             <li><a href="mailto:letrungtin12052005@gmail.com">Email</a></li>
@@ -134,110 +135,11 @@
         </div>
       </section>
 
-      <section id="projects" class="card">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-          <article class="project-card">
-            <h3>Banking Service (Microservices AI Customer Support)</h3>
-            <p>
-              Built a microservice architecture with FastAPI gateway, gRPC intent-service, and Streamlit frontend using Docker Compose and external Ollama inference.
-            </p>
-            <div class="tag-list">
-              <span class="tag">FastAPI</span><span class="tag">gRPC</span><span class="tag">Streamlit</span><span class="tag">Docker Compose</span><span class="tag">Ollama</span>
-            </div>
-            <p class="project-links">
-              <a href="https://github.com/tinpro2k5/banking-service" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Scientific Paper Search with Transformer Reranking</h3>
-            <p>
-              Implemented a paper retrieval + reranking pipeline with Transformer training, evaluation metrics (NDCG/MRR/MAP), Flask serving, and SQLite FTS5 search.
-            </p>
-            <div class="tag-list">
-              <span class="tag">Transformers</span><span class="tag">Flask</span><span class="tag">SQLite FTS5</span><span class="tag">ML Evaluation</span>
-            </div>
-            <p class="project-links">
-              <a href="https://github.com/tinpro2k5/statistical_learning_final" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Cinema Booking Platform</h3>
-            <p>
-              Delivered a cinema booking platform with Node/Express backend, Prisma + MySQL data layer, JWT-based auth, Cloudflare R2 media handling, and MoMo payment flow.
-            </p>
-            <div class="tag-list">
-              <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Prisma</span><span class="tag">MySQL</span><span class="tag">JWT</span><span class="tag">Cloudflare R2</span>
-            </div>
-            <p class="project-links">
-              <a href="https://github.com/tinpro2k5/Intro2SE_CQ23_1_GROUP2_5TT5" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Secure Note CLI + Server</h3>
-            <p>
-              Built a secure note system in Go with JWT access/refresh flow, signed URL sharing, Argon2id password hashing, and SQLite persistence for API + CLI clients.
-            </p>
-            <div class="tag-list">
-              <span class="tag">Go</span><span class="tag">JWT</span><span class="tag">Argon2id</span><span class="tag">Signed URLs</span><span class="tag">SQLite</span>
-            </div>
-            <p class="project-links">
-              <a href="https://github.com/ZelusIsMe-05/Lab02-Note" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-          </article>
-
-          <article class="project-card">
-            <h3>Meeting Minutes & Action Item Extraction</h3>
-            <p>
-              Served as BA for model inference deployment and monitoring: developed FastAPI gateway integration, model-service communication, and JSONL-based metrics logging.
-            </p>
-            <div class="tag-list">
-              <span class="tag">FastAPI</span><span class="tag">Model Inference</span><span class="tag">Monitoring</span><span class="tag">JSONL Metrics</span><span class="tag">NLP</span>
-            </div>
-            <p class="project-links">
-              <a href="https://github.com/tuduy311/Final_Assigment_NLP" target="_blank" rel="noopener noreferrer">GitHub</a>
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="education" class="card">
-        <h2>Education, Awards & Coursework</h2>
-        <article class="education-block">
-          <h3>Bachelor of Information Technology — University of Science, VNUHCMC</h3>
-          <p class="muted">2023 - Present · GPA: 9.36/10</p>
-        </article>
-
-        <article class="education-block">
-          <h3>Awards</h3>
-          <ul>
-            <li>Academic Encouragement Scholarship, Semester 1 (2024-2025)</li>
-            <li>Faculty Honor Roll for Outstanding Academic Achievement (2024-2025)</li>
-          </ul>
-        </article>
-
-        <article class="education-block">
-          <h3>Relevant Coursework</h3>
-          <ul>
-            <li>Data Structures and Algorithms, Relational Database Systems, Operating Systems</li>
-            <li>Computer Networks, Software Engineering, Machine Learning</li>
-            <li>Applications of NLP in Industry, Introduction to Cryptography and Encryption</li>
-          </ul>
-        </article>
-      </section>
-
-      <section id="contact" class="card">
-        <h2>Contact</h2>
-        <p>
-          Open to Cloud/DevOps Engineer Intern opportunities. Feel free to reach out for internship collaboration, project discussion, or interview scheduling.
-        </p>
-        <div class="cta-group">
-          <a class="btn btn-primary" href="mailto:letrungtin12052005@gmail.com">Email Me</a>
-          <a class="btn btn-secondary" href="https://github.com/tinpro2k5" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-        </div>
+      <section class="card" id="project-section">
+        <h2>Projects nổi bật</h2>
+        <ul id="project-list" class="project-list">
+          <li>Đang tải projects từ GitHub...</li>
+        </ul>
       </section>
     </main>
 
