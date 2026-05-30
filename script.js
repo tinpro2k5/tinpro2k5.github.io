@@ -29,6 +29,24 @@ const createTextListItem = (text) => {
   return li;
 };
 
+const toProjectBadges = (repo) => {
+  const badges = [];
+  if (repo.language) {
+    badges.push(repo.language);
+  }
+
+  if (Array.isArray(repo.topics)) {
+    for (const topic of repo.topics.slice(0, 3)) {
+      const normalized = String(topic).trim();
+      if (normalized) {
+        badges.push(normalized);
+      }
+    }
+  }
+
+  return [...new Set(badges)];
+};
+
 const toSortedTechPairs = (repos) => {
   const techCounter = new Map();
   for (const repo of repos) {
@@ -81,16 +99,20 @@ const renderProjects = (repos) => {
     link.rel = "noopener noreferrer";
     link.textContent = repo.name || "unknown-project";
 
-    const language = document.createElement("span");
-    language.className = "language-badge";
-    language.textContent = repo.language || "N/A";
-
     title.appendChild(link);
-    title.appendChild(language);
 
     const desc = document.createElement("p");
     desc.className = "project-desc";
     desc.textContent = repo.description || "No description provided.";
+
+    const badges = document.createElement("div");
+    badges.className = "project-tech-list";
+    for (const label of toProjectBadges(repo)) {
+      const badge = document.createElement("span");
+      badge.className = "tech-badge";
+      badge.textContent = label;
+      badges.appendChild(badge);
+    }
 
     const meta = document.createElement("p");
     meta.className = "project-meta";
@@ -98,6 +120,7 @@ const renderProjects = (repos) => {
 
     li.appendChild(title);
     li.appendChild(desc);
+    li.appendChild(badges);
     li.appendChild(meta);
     projectListEl.appendChild(li);
   }
@@ -106,11 +129,16 @@ const renderProjects = (repos) => {
 async function loadPortfolio() {
   try {
     const [profileRes, reposRes] = await Promise.all([
-      fetch(`https://api.github.com/users/${encodeURIComponent(username)}`),
+      fetch(`https://api.github.com/users/${encodeURIComponent(username)}`, {
+        headers: { Accept: "application/vnd.github+json" },
+      }),
       fetch(
         `https://api.github.com/users/${encodeURIComponent(
           username
-        )}/repos?sort=updated&per_page=6`
+        )}/repos?sort=updated&per_page=12`,
+        {
+          headers: { Accept: "application/vnd.github+json" },
+        }
       ),
     ]);
 
