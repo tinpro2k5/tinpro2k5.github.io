@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  gap: 16px;
+}
+
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.profile {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid #38bdf8;
+}
+
+h1,
+h2 {
+  margin: 0 0 10px;
+}
+
+p {
+  margin: 0 0 8px;
+}
+
+a {
+  color: #38bdf8;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(80px, 1fr));
+}
+
+.grid p {
+  margin: 0;
+  background: #0f172a;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.grid strong {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.grid span {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+#repo-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+
+#repo-list li {
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
