@@ -1,14 +1,50 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | Lê Trung Tín</title>
+    <title>Lê Trung Tín | Cloud & DevOps Engineer Intern</title>
     <meta
       name="description"
-      content="Portfolio chuyên nghiệp của Lê Trung Tín với dự án từ GitHub, kỹ năng và công nghệ."
+      content="Portfolio of Lê Trung Tín — Cloud/DevOps Engineer Intern candidate showcasing backend, NLP, and cloud-ready projects."
+    />
+    <meta name="author" content="Lê Trung Tín" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Lê Trung Tín | Cloud & DevOps Engineer Intern" />
+    <meta
+      property="og:description"
+      content="Recruiter-friendly portfolio with featured projects, skills, education, and contact details."
+    />
+    <meta property="og:url" content="https://tinpro2k5.github.io/" />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/138514066" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Lê Trung Tín | Cloud & DevOps Engineer Intern" />
+    <meta
+      name="twitter:description"
+      content="Cloud/DevOps-focused student portfolio with project highlights in backend, NLP, and system design."
+    />
+    <link rel="canonical" href="https://tinpro2k5.github.io/" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='50' font-size='48'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lê Trung Tín",
+        "jobTitle": "Cloud/DevOps Engineer Intern",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ho Chi Minh City",
+          "addressCountry": "Vietnam"
+        },
+        "email": "mailto:letrungtin12052005@gmail.com",
+        "url": "https://tinpro2k5.github.io/",
+        "sameAs": ["https://github.com/tinpro2k5", "https://www.linkedin.com/in/lê-tín-9b574a412"]
+      }
+    </script>
   </head>
   <body>
     <main class="container">
@@ -31,43 +67,65 @@
               <a class="btn btn-secondary" href="#contact">Contact</a>
             </div>
           </div>
+          <ul class="contact-links" aria-label="Contact links">
+            <li><a href="mailto:letrungtin12052005@gmail.com">Email</a></li>
+            <li><a id="github-link" href="https://github.com/tinpro2k5" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/lê-tín-9b574a412" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
+            <li><a href="tel:+84343996748">(+84) 343 996 748</a></li>
+          </ul>
         </div>
-        <div class="hero-summary">
-          <h2>Tổng quan</h2>
-          <p><strong id="repo-count">0</strong><span>Repositories công khai</span></p>
-          <p><strong id="followers">0</strong><span>Followers</span></p>
-          <p><strong id="following">0</strong><span>Following</span></p>
-        </div>
+        <aside class="profile-card" aria-label="Profile snapshot">
+          <img id="avatar" class="avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' rx='80' fill='%232563eb'/%3E%3Ctext x='50%25' y='54%25' font-size='58' text-anchor='middle' fill='white' font-family='Arial,sans-serif'%3ELT%3C/text%3E%3C/svg%3E" alt="Avatar placeholder" />
+          <dl>
+            <div>
+              <dt>Public repos</dt>
+              <dd id="repo-count">22</dd>
+            </div>
+            <div>
+              <dt>Followers</dt>
+              <dd id="followers">0</dd>
+            </div>
+            <div>
+              <dt>Following</dt>
+              <dd id="following">0</dd>
+            </div>
+          </dl>
+        </aside>
       </section>
 
       <section class="card section-accent">
         <h2>Giới thiệu</h2>
         <p>
-          Mình là <strong>Lê Trung Tín</strong>, tập trung xây dựng sản phẩm web hiện đại, tối ưu trải nghiệm
-          người dùng và hiệu năng triển khai thực tế.
+          I am focused on building reliable backend and cloud-native systems, while continuously improving operational skills across deployment,
+          observability, and performance. I enjoy applying ML/NLP in practical products and collaborating in course-team environments.
         </p>
-        <p id="about-github">Đang tải mô tả từ GitHub...</p>
       </section>
 
-      <section class="card">
-        <h2>Skills & Technology</h2>
+      <section id="skills" class="card">
+        <h2>Skills & Tech Stack</h2>
         <div class="skills-grid">
-          <div>
-            <h3>Core Skills</h3>
-            <ul class="list">
-              <li>Frontend Development</li>
-              <li>Responsive Web Design</li>
-              <li>REST API Integration</li>
-              <li>UI/UX Implementation</li>
-              <li>Git & GitHub Workflow</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Technology Stack (từ GitHub repos)</h3>
-            <ul id="tech-list" class="list">
-              <li>Đang phân tích technologies...</li>
-            </ul>
-          </div>
+          <article>
+            <h3>Languages</h3>
+            <div class="tag-list">
+              <span class="tag">Python</span><span class="tag">C++</span><span class="tag">Go</span><span class="tag">SQL</span>
+            </div>
+          </article>
+          <article>
+            <h3>Tools & Platforms</h3>
+            <div class="tag-list">
+              <span class="tag">Docker</span><span class="tag">Git/GitHub</span><span class="tag">Linux</span><span class="tag">AWS</span>
+              <span class="tag">MySQL</span><span class="tag">GCP</span><span class="tag">LaTeX</span>
+            </div>
+          </article>
+          <article>
+            <h3>Interests</h3>
+            <div class="tag-list">
+              <span class="tag">Cloud Computing</span><span class="tag">DevOps</span><span class="tag">Machine Learning</span>
+              <span class="tag">NLP</span><span class="tag">Backend Development</span>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -89,6 +147,13 @@
         </div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Lê Trung Tín · Built for GitHub Pages</p>
+      </div>
+    </footer>
+
     <script src="./script.js"></script>
   </body>
 </html>

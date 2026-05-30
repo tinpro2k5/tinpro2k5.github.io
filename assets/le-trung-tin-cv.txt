@@ -1,0 +1,37 @@
+LÊ TRUNG TÍN
+Cloud/DevOps Engineer Intern
+
+Location: Ho Chi Minh City, Vietnam
+Phone: (+84) 343996748
+Email: letrungtin12052005@gmail.com
+Portfolio: https://tinpro2k5.github.io/
+GitHub: https://github.com/tinpro2k5
+LinkedIn: https://www.linkedin.com/in/lê-tín-9b574a412
+
+SUMMARY
+Third-year Computer Science student with strong academic performance and interests in cloud infrastructure, backend systems, and AI/ML applications. Experienced in academic and personal projects involving machine learning, NLP, backend development, and cloud deployment.
+
+SKILLS
+Programming Languages: Python, C++, Go, SQL
+Tools & Technologies: Docker, Git/GitHub, Linux, AWS, MySQL, Google Cloud Platform, LaTeX
+Areas of Interest: Cloud Computing, DevOps, Machine Learning, NLP, Backend Development
+
+EDUCATION
+Bachelor of Information Technology, University of Science, VNUHCMC (2023 - Present)
+GPA: 9.36/10
+
+HONORS & AWARDS
+- Academic Encouragement Scholarship, Semester 1 (2024-2025)
+- Faculty Honor Roll for Outstanding Academic Achievement (2024-2025)
+
+FEATURED PROJECTS
+1) Banking Service (Microservices AI Customer Support)
+   FastAPI + gRPC + Streamlit + Docker Compose + Ollama integration.
+2) Scientific Paper Search with Transformer Reranking
+   Transformer training + Flask app + SQLite FTS5 search.
+3) Cinema Booking Platform
+   Node/Express + Prisma + MySQL + JWT + Cloudflare R2 + MoMo flow.
+4) Secure Note CLI + Server
+   Go + JWT refresh + signed URLs + Argon2id + SQLite.
+5) Meeting Minutes & Action Item Extraction
+   FastAPI gateway + external model service + monitoring metrics JSONL.
