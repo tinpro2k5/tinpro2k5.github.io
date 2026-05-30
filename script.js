@@ -1,25 +1,10 @@
-const username = "tinpro2k5";
+const themeToggleEl = document.getElementById("theme-toggle");
+const yearEl = document.getElementById("year");
 
-const avatarEl = document.getElementById("avatar");
-const bioEl = document.getElementById("bio");
-const aboutGithubEl = document.getElementById("about-github");
-const githubLinkEl = document.getElementById("github-link");
-const repoCountEl = document.getElementById("repo-count");
-const followersEl = document.getElementById("followers");
-const followingEl = document.getElementById("following");
-const projectListEl = document.getElementById("project-list");
-const techListEl = document.getElementById("tech-list");
-
-const formatDate = (isoDate) => {
-  if (!isoDate) return "N/A";
-  const date = new Date(isoDate);
-  if (Number.isNaN(date.getTime())) return "N/A";
-  return date.toLocaleDateString("vi-VN");
-};
-
-const clearElement = (element) => {
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
+const setTheme = (theme) => {
+  document.documentElement.setAttribute("data-theme", theme);
+  if (themeToggleEl) {
+    themeToggleEl.innerHTML = theme === "dark" ? '<span aria-hidden="true">☀️</span> Theme' : '<span aria-hidden="true">🌙</span> Theme';
   }
 };
 
@@ -65,16 +50,14 @@ const toSortedTechPairs = (repos) => {
   return [...techCounter.entries()].sort((a, b) => b[1] - a[1]).slice(0, 10);
 };
 
-const renderTechStack = (repos) => {
-  const techPairs = toSortedTechPairs(repos);
-  clearElement(techListEl);
-  if (!techPairs.length) {
-    techListEl.appendChild(createTextListItem("Chưa có dữ liệu technology từ repositories."));
-    return;
-  }
-  for (const [name, count] of techPairs) {
-    techListEl.appendChild(createTextListItem(`${name} (${count} repos)`));
-  }
+const bindThemeToggle = () => {
+  if (!themeToggleEl) return;
+  themeToggleEl.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+    const next = current === "dark" ? "light" : "dark";
+    setTheme(next);
+    localStorage.setItem("portfolio-theme", next);
+  });
 };
 
 const renderProjects = (repos) => {
