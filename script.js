@@ -59,6 +59,19 @@ const renderTechStack = (repos) => {
   }
 };
 
+const getProjectBadges = (repo) => {
+  const badges = [];
+  if (repo.language) badges.push(repo.language);
+  if (Array.isArray(repo.topics)) {
+    for (const topic of repo.topics.slice(0, 3)) {
+      const normalized = String(topic).trim();
+      if (normalized) badges.push(normalized);
+    }
+  }
+  const uniqueBadges = [...new Set(badges)].slice(0, 4);
+  return uniqueBadges.length ? uniqueBadges : ["General"];
+};
+
 const renderProjects = (repos) => {
   clearElement(projectListEl);
   const nonForkRepos = repos.filter((repo) => !repo.fork).slice(0, 8);
@@ -81,23 +94,33 @@ const renderProjects = (repos) => {
     link.rel = "noopener noreferrer";
     link.textContent = repo.name || "unknown-project";
 
-    const language = document.createElement("span");
-    language.className = "language-badge";
-    language.textContent = repo.language || "N/A";
+    const updatedAt = document.createElement("span");
+    updatedAt.className = "project-meta";
+    updatedAt.textContent = `Updated ${formatDate(repo.updated_at)}`;
 
     title.appendChild(link);
-    title.appendChild(language);
+    title.appendChild(updatedAt);
 
     const desc = document.createElement("p");
     desc.className = "project-desc";
     desc.textContent = repo.description || "No description provided.";
 
+    const badges = document.createElement("div");
+    badges.className = "project-badges";
+    for (const badge of getProjectBadges(repo)) {
+      const badgeEl = document.createElement("span");
+      badgeEl.className = "tech-badge";
+      badgeEl.textContent = badge;
+      badges.appendChild(badgeEl);
+    }
+
     const meta = document.createElement("p");
     meta.className = "project-meta";
-    meta.textContent = `⭐ ${repo.stargazers_count || 0} · Forks ${repo.forks_count || 0} · Updated ${formatDate(repo.updated_at)}`;
+    meta.textContent = `⭐ ${repo.stargazers_count || 0} · Forks ${repo.forks_count || 0}`;
 
     li.appendChild(title);
     li.appendChild(desc);
+    li.appendChild(badges);
     li.appendChild(meta);
     projectListEl.appendChild(li);
   }
@@ -110,7 +133,7 @@ async function loadPortfolio() {
       fetch(
         `https://api.github.com/users/${encodeURIComponent(
           username
-        )}/repos?sort=updated&per_page=6`
+        )}/repos?sort=updated&per_page=20`
       ),
     ]);
 
@@ -140,7 +163,6 @@ async function loadPortfolio() {
     techListEl.appendChild(createTextListItem("Không thể tải technology."));
     clearElement(projectListEl);
     projectListEl.appendChild(createTextListItem("Không thể tải projects. Vui lòng thử lại sau."));
-    console.error(error);
   }
 }
 
